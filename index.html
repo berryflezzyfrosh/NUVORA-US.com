@@ -1,21 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./nuvora-logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#0ea5e9" />
-    <meta name="description" content="NUVORA — Global real-time messaging with the NUVO AI assistant." />
-    <title>NUVORA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <div id="toast-container"></div>
-    <div id="modal-root"></div>
-    <script type="module" src="./js/app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="description" content="NUVORA — Global real-time messaging with the NUVO AI assistant." />
+  <title>NUVORA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loading screen (visible before JS loads) -->
+  <div id="loading-screen">
+    <div class="loading-logo">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nuvoraGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#14b8a6"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 4C16.5 4 4 14.7 4 28c0 7.5 3.8 14.2 9.8 18.7L12 60l14-5.2c1.9.4 3.9.6 6 .6 15.5 0 28-10.7 28-24S47.5 4 32 4z" fill="url(#nuvoraGrad)"/>
+        <path d="M22 24c0-1.1.9-2 2-2h3.5c.9 0 1.7.6 1.9 1.5L32 34l5-22c.2-.9 1-1.5 1.9-1.5H42c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2s-2-.9-2-2V18l-4.5 20c-.2.9-1 1.5-1.9 1.5h-3.2c-.9 0-1.7-.6-1.9-1.5L24 18v22c0 1.1-.9 2-2 2s-2-.9-2-2V24z" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="loading-text">NUVORA</div>
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Error screen (shown if JS fails) -->
+  <div id="error-screen" class="hidden">
+    <div class="error-logo">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+        <path d="M32 4C16.5 4 4 14.7 4 28c0 7.5 3.8 14.2 9.8 18.7L12 60l14-5.2c1.9.4 3.9.6 6 .6 15.5 0 28-10.7 28-24S47.5 4 32 4z" fill="#0ea5e9"/>
+        <path d="M22 24c0-1.1.9-2 2-2h3.5c.9 0 1.7.6 1.9 1.5L32 34l5-22c.2-.9 1-1.5 1.9-1.5H42c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2s-2-.9-2-2V18l-4.5 20c-.2.9-1 1.5-1.9 1.5h-3.2c-.9 0-1.7-.6-1.9-1.5L24 18v22c0 1.1-.9 2-2 2s-2-.9-2-2V24z" fill="#fff"/>
+      </svg>
+    </div>
+    <h2>NUVORA</h2>
+    <p id="error-message">NUVORA could not connect right now. Please check your internet connection and try again.</p>
+    <button onclick="location.reload()" class="retry-btn">Retry</button>
+  </div>
+
+  <!-- App root -->
+  <div id="app"></div>
+
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
+  <!-- Modal root -->
+  <div id="modal-root"></div>
+
+  <!-- Supabase client from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.min.js"></script>
+
+  <!-- Main application -->
+  <script src="script.js"></script>
+</body>
 </html>
