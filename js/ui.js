@@ -11,6 +11,7 @@ import { renderStatusView, postStatus, loadStatuses } from './status.js';
 import { renderCallsView, callHistory } from './calls.js';
 import { renderNuvoView } from './ai.js';
 import { renderSettingsView, renderContactsView, renderBlockedView, renderStorageView, renderNotificationsView } from './settings.js';
+import { loadContacts } from './contacts.js';
 import { setReplyTo, getReplyTo, clearReplyTo, onReplyChange } from './lib/replyState.js';
 import { renderComposer, renderEmojiPicker, renderAttachmentMenu } from './composer.js';
 import { renderMessageContextMenu } from './messageActions.js';

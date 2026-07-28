@@ -218,13 +218,7 @@ async function handleSignup(e) {
     return;
   }
   if (data.user) {
-    // create profile
-    await supabase.from('profiles').insert({
-      id: data.user.id,
-      username,
-      display_name: displayName,
-    });
-    await supabase.from('user_settings').insert({ user_id: data.user.id });
+    // Profile and settings are auto-created by database triggers
     toast('Welcome to NUVORA!', 'success');
   }
 }

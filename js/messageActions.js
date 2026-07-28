@@ -1,7 +1,7 @@
 // js/messageActions.js
 import { supabase } from './lib/supabase.js';
 import { state, emit } from './lib/state.js';
-import { $, el, toast, escapeHtml, showModal, closeModal, confirmDialog } from './lib/utils.js';
+import { $, $$, el, toast, escapeHtml, showModal, closeModal, confirmDialog } from './lib/utils.js';
 import { Icon } from './lib/icons.js';
 import { editMessage, deleteMessage, starMessage, toggleReaction, forwardMessage, getMessages } from './chat.js';
 import { setReplyTo } from './lib/replyState.js';

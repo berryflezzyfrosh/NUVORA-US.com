@@ -1,7 +1,7 @@
 // js/ai.js
 import { supabase } from './lib/supabase.js';
 import { state, emit } from './lib/state.js';
-import { $, el, toast, escapeHtml, avatarHTML, formatTime } from './lib/utils.js';
+import { $, $$, el, toast, escapeHtml, avatarHTML, formatTime } from './lib/utils.js';
 import { Icon } from './lib/icons.js';
 
 const NUVO_SYSTEM_PROMPT = `You are NUVO, the built-in AI assistant inside NUVORA, a global real-time messaging app. You are friendly, helpful, and concise. You help users with:
