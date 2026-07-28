@@ -10,8 +10,8 @@
    2. Copy the "Project URL" and "anon public" key
    3. Paste them below
    ============================================================ */
-const SUPABASE_URL = 'https://dovvfddzoocsswzmuppj.supabase.co/';
-const SUPABASE_ANON_KEY = 'sb_publishable_e8vvx0CJGuD0jcyF1Uxz5A_C1BNeEGJ';
+const SUPABASE_URL = 'https://wcktpmbsdamhuprczcrk.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indja3RwbWJzZGFtaHVwcmN6Y3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxODUyNDYsImV4cCI6MjEwMDc2MTI0Nn0.gwfsTYcIdQQDgVcvyQY8unKUMWxDmY-zYZo-s8YxscY';
 
 /* ============================================================
    STATE
