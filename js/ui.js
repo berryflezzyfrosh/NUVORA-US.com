@@ -1,7 +1,7 @@
 // js/ui.js
 import { supabase } from './lib/supabase.js';
 import { state, setState, emit, subscribe, applyTheme } from './lib/state.js';
-import { $, el, toast, escapeHtml, avatarHTML, formatTime, formatDate, formatDateTime, formatFileSize, formatDuration, showModal, closeModal, confirmDialog, debounce, uuid, toggleArray, getMediaType, linkify, requestNotificationPermission, showBrowserNotification } from './lib/utils.js';
+import { $, el, toast, escapeHtml, avatarHTML, formatTime, formatDate, formatDateTime, formatFileSize, formatDuration, showModal, closeModal, confirmDialog, debounce, uuid, toggleArray, getMediaType, linkify, requestNotificationPermission, showBrowserNotification, logoUrl } from './lib/utils.js';
 import { Icon } from './lib/icons.js';
 import { logout, updatePresence } from './auth.js';
 import { loadChats, openChat, markChatRead, sendMessage, editMessage, deleteMessage, starMessage, toggleReaction, forwardMessage, pinChat, muteChat, archiveChat, clearChatHistory, deleteChat, sendTyping, searchMessages, getMessages } from './chat.js';
@@ -79,7 +79,7 @@ function renderSidebarHeader() {
   if (!header) return;
   header.innerHTML = `
     <div class="sidebar-brand">
-      <img src="/nuvora-logo.svg" alt="NUVORA" />
+      <img src="${logoUrl}" alt="NUVORA" />
       <span>NUVORA</span>
     </div>
     <div style="display:flex;gap:4px;">
@@ -287,7 +287,7 @@ export function renderMainArea() {
   } else {
     main.innerHTML = `
       <div class="empty-state">
-        <img src="/nuvora-logo.svg" alt="NUVORA" />
+        <img src="${logoUrl}" alt="NUVORA" />
         <h2>Welcome to NUVORA</h2>
         <p>Select a conversation to start messaging, or tap the pencil icon to begin a new chat with anyone around the world.</p>
       </div>

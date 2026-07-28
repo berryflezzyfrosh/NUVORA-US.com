@@ -1,7 +1,7 @@
 // js/auth.js
 import { supabase } from './lib/supabase.js';
 import { state, setState, loadProfile, loadSettings, applyTheme, emit } from './lib/state.js';
-import { $, el, toast, escapeHtml } from './lib/utils.js';
+import { $, el, toast, escapeHtml, logoUrl } from './lib/utils.js';
 import { Icon } from './lib/icons.js';
 
 let authReady = false;
@@ -86,7 +86,7 @@ export function renderAuth() {
   screen.innerHTML = `
     <div class="auth-card">
       <div class="auth-logo">
-        <img src="/nuvora-logo.svg" alt="NUVORA" />
+        <img src="${logoUrl}" alt="NUVORA" />
         <h1>NUVORA</h1>
       </div>
       <p class="auth-subtitle">Global messaging, reimagined.</p>
@@ -236,7 +236,7 @@ function renderForgotPassword() {
   screen.innerHTML = `
     <div class="auth-card">
       <div class="auth-logo">
-        <img src="/nuvora-logo.svg" alt="NUVORA" />
+        <img src="${logoUrl}" alt="NUVORA" />
         <h1>Reset Password</h1>
       </div>
       <p class="auth-subtitle">We'll email you a reset link.</p>
@@ -278,7 +278,7 @@ function renderResetPassword() {
   screen.innerHTML = `
     <div class="auth-card">
       <div class="auth-logo">
-        <img src="/nuvora-logo.svg" alt="NUVORA" />
+        <img src="${logoUrl}" alt="NUVORA" />
         <h1>Set New Password</h1>
       </div>
       <form class="auth-form" id="newpw-form">

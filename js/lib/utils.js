@@ -2,6 +2,7 @@
 import { supabase } from './supabase.js';
 
 // ---------- DOM helpers ----------
+export const logoUrl = `${import.meta.env.BASE_URL}nuvora-logo.svg`;
 export const $ = (sel, root = document) => root.querySelector(sel);
 export const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 export function el(tag, props = {}, children = []) {
@@ -193,6 +194,6 @@ export async function requestNotificationPermission() {
 export function showBrowserNotification(title, body, data = {}) {
   if (!('Notification' in window) || Notification.permission !== 'granted') return;
   if (document.hasFocus()) return;
-  const n = new Notification(title, { body, icon: '/nuvora-logo.svg', data });
+  const n = new Notification(title, { body, icon: logoUrl, data });
   n.onclick = () => { window.focus(); n.close(); };
 }

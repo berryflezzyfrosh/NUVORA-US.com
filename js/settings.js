@@ -1,7 +1,7 @@
 // js/settings.js
 import { supabase } from './lib/supabase.js';
 import { state, setState, emit, loadSettings, applyTheme } from './lib/state.js';
-import { $, el, toast, escapeHtml, avatarHTML, showModal, closeModal, confirmDialog, formatFileSize, formatDateTime, debounce } from './lib/utils.js';
+import { $, el, toast, escapeHtml, avatarHTML, showModal, closeModal, confirmDialog, formatFileSize, formatDateTime, debounce, logoUrl } from './lib/utils.js';
 import { Icon } from './lib/icons.js';
 import { searchUsers, showProfileModal, showEditProfileModal } from './profile.js';
 import { loadChats } from './chat.js';
@@ -483,7 +483,7 @@ function renderAboutSettings(main) {
       <div class="main-header-title">About NUVORA</div>
     </div>
     <div class="main-content" style="padding:24px;overflow-y:auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
-      <img src="/nuvora-logo.svg" alt="NUVORA" style="width:96px;height:96px;margin-bottom:16px;" />
+      <img src="${logoUrl}" alt="NUVORA" style="width:96px;height:96px;margin-bottom:16px;" />
       <h1 style="font-size:28px;font-weight:800;margin-bottom:4px;">NUVORA</h1>
       <p style="color:var(--text-muted);margin-bottom:4px;">Version 1.0.0</p>
       <p style="color:var(--text-muted);font-size:14px;max-width:320px;margin-bottom:24px;">Global real-time messaging, reimagined. Connect with anyone, anywhere, with the power of the NUVO AI assistant.</p>
